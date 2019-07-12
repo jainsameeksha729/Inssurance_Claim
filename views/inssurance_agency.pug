@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  h1 Welcome to Inssurance Agency
+  div
+  p Requests for Claim
+   table#customers.table.table-hover
+    thead
+      tr: th  Customer Address
+          th  Inssurance Id
+          th  Fir Number
+    tbody
+      each user in requests
+        tr
+          td=user.customer
+          td=user.id
+          td=user.fir
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Raise Verification Request 
+
+        // Raise Verification Request 
+        form(method='POST' action='/issuer/verificationRequest')
+          div.form-group
+            label(for='ID') Inssurance Id:
+            input#ID.form-control(type='text', placeholder='first and last' name='ID')
+
+          div.form-group
+            label(for='fir') FIR Number:
+            input#fir.form-control(type='text', placeholder='first and last' name='fir')
+          
+          button.btn.btn-primary(type='submit') Sign up

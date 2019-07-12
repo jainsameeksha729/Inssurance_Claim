@@ -1,0 +1,66 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Insurrance Purchage
+
+        // Insurrance Purchage form
+        form(method='POST' action='/users/buyInssurance')
+          div.form-group
+            label(for='cname') Customer Name:
+            input#cname.form-control(type='text', placeholder='first and last' name='cname')
+          div.form-group
+            label(for='iname') Issuer Name:
+            input#iname.form-control(type='text', placeholder='first and last' name='iname')
+          div.form-group
+            label(for='product') Product:
+            input#product.form-control(type='text', name='product')
+          div.form-group
+            label(for='cost') cost:
+            input#cost.form-control(type='text' name='cost')
+          div.form-group
+            label(for='idate') Issue Date:
+            input#idate.form-control(type='date' name='idate')
+          div.form-group
+            label(for='edate') End Date:
+            input#edate.form-control(type='date' name='edate')
+          div.form-group
+            label(for='premiumAmt') Premium Amount:
+            input#premiumAmt.form-control(type='text' name='premiumAmt')
+          div.form-group
+            label(for='coverAmt') Covered Amount:
+            input#coverAmt.form-control(type='text' name='coverAmt')
+          button.btn.btn-primary(type='submit') Sign up
+
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 File FIR
+
+        // register form
+        form(method='POST' action='/users/fileFIR')
+          div.form-group
+            label(for='inssuranceId') Inssurance Id:
+            input#inssuranceId.form-control(type='text', placeholder='first and last' name='inssuranceId')
+          
+          button.btn.btn-primary(type='submit') Sign up
+
+
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Claim Request
+
+        // register form
+        form(method='POST' action='/users/claimRequest')
+          div.form-group
+            label(for='inssuranceID') Inssurance Id:
+            input#inssuranceID.form-control(type='text', placeholder='first and last' name='inssuranceID')
+
+          div.form-group
+            label(for='firNumber') FIR Number:
+            input#firNumber.form-control(type='text', placeholder='first and last' name='firNumber')
+          
+          button.btn.btn-primary(type='submit') Sign up

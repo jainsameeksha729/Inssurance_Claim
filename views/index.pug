@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  p Welcome to #{title}
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Sign Up
+
+        // register form
+        form(method='POST' action='/register')
+          div.form-group
+            label(for='cname') Customer Name:
+            input#cname.form-control(type='text', placeholder='first and last' name='cname')
+          div.form-group
+            label(for='iname') Issuer Name:
+            input#iname.form-control(type='text', placeholder='first and last' name='iname')
+          div.form-group
+            label(for='product') Product:
+            input#product.form-control(type='text', name='product')
+          div.form-group
+            label(for='cost') cost:
+            input#cost.form-control(type='text' name='cost')
+          div.form-group
+            label(for='idate') Issue Date:
+            input#idate.form-control(type='date' name='idate')
+          div.form-group
+            label(for='edate') End Date:
+            input#edate.form-control(type='date' name='edate')
+          div.form-group
+            label(for='premiumAmt') Premium Amount:
+            input#premiumAmt.form-control(type='text' name='premiumAmt')
+          div.form-group
+            label(for='coverAmt') Covered Amount:
+            input#coverAmt.form-control(type='text' name='coverAmt')
+          button.btn.btn-primary(type='submit') Sign up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
